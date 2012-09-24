@@ -1,0 +1,22 @@
+SetEnv SESSION_USE_TRANS_SID 0
+SetEnv PHP_VER 5
+
+AddType application/octet-stream .m3u
+AddType application/octet-stream .xspf
+
+<Files *.m3u>
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
+</Files>
+
+<Files *.xspf>
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
+</Files>
+
+RewriteEngine On
+RewriteBase / 
+
+RewriteRule ^vlc\.m3u$ /playlist.php [L]
+
+RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
