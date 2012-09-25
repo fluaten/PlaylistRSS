@@ -14,7 +14,7 @@
 		
 			<span class="img">
 				<a href="<?php echo $urldomain; ?>/Playlist_<?php
-			$urldomainname = substr($urldomain, 7);
+			$urldomainname = str_replace("/", "_", substr($urldomain, 7));
 			 echo $urldomainname; ?>.xspf" rel="alternate" target=_blank >
 					<span class="dl"><?php echo $downloadtext; ?></span>
 				</a><br><br><br><br>
