@@ -14,20 +14,11 @@ Made with Simplepie for converting RSS feed. <http://simplepie.org/>
 ### Install
 
  1. Download zip : <https://github.com/fluaten/PlaylistRSS/zipball/master>
- 2. Copy the folder by ftp on the webiste.
+ 2. Copy the folder by ftp on the website.
  3. Create a subdomain (ex: radio.domain.com) or modify folder name.
  4. Open config.php.
  5. Change `$urldomain` to subdomain or folder url.
-
-	`$urldomain = "http://radio.domain.com";` 
-	`// Url of the website and playlist (subdomain if possible).`
-	`// Simplepie (podcast) won't work on restricted hosting.`
-
- 6. Choose Language.
-
-	`define("LANG", "EN"); // English language.`
-	`//define("LANG", "FR"); // Langue française.`
-
+ 6. Choose Language (English or French), uncomment selected language.
  7. Change title `$titledomainname` and description `$description` of frontend page.
  8. Save config.php.
  9. Open playlist.php.
