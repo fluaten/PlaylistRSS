@@ -25,7 +25,7 @@ Made with Simplepie for converting RSS feed. <http://simplepie.org/>
  10. Add/modify playlist element after `/* --- Playlist start ---- */`.
  11. Save **playlist.php** on the ftp.
  12. Visit the website (ex: http://radio.domain.com)
- 13. Download the playlist, open it with [VLC]: http://www.videolan.org/ or else.	
+ 13. Download the playlist, open it with VLC http://www.videolan.org/ or else.	
  14. Or copy paste website url in VLC (Media > Open network Stream)
 
 ![VLCnetwork](http://playlistrss.fluate.net/img/networkstream.png) 
