@@ -20,8 +20,8 @@ Made with Simplepie for converting RSS feed. <http://simplepie.org/>
    
  	If PlaylistRSS is not in a subdomain but in a folder :
  
- 		1. Open **.htaccess**
- 		2. Comment with \#\# in front of each line :
+ 		1. Open .htaccess in the folder.
+ 		2. Comment with ## in front of each line :
  
 	\#\#RewriteBase /
 	 
@@ -39,7 +39,7 @@ Made with Simplepie for converting RSS feed. <http://simplepie.org/>
 	RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]
 	
 	
- 		4. Save **.htaccess** on the ftp
+ 		4. Save .htaccess file on the ftp
 	
  ---
  4. Open **config.php**
