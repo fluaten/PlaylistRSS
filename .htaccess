@@ -15,8 +15,15 @@ AddType application/octet-stream .xspf
 </Files>
 
 RewriteEngine On
+
+## If website url is root or subdomain, else comment with ## in front
+
 RewriteBase / 
-
 RewriteRule ^vlc\.m3u$ /playlist.php [L]
-
 RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
+
+## If website url is in a folder change to your name/path of folder, here /radio) and uncomment the ##
+
+##RewriteBase /radio/
+##RewriteRule ^vlc\.m3u$ /radio/playlist.php [L]
+##RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]

@@ -50,6 +50,8 @@ Be sure to have a file named .htaccess at the root folder with :
 
 ##---------.htaccess-------------
 
+
+
 SetEnv SESSION_USE_TRANS_SID 0
 SetEnv PHP_VER 5
 
@@ -57,21 +59,30 @@ AddType application/octet-stream .m3u
 AddType application/octet-stream .xspf
 
 <Files *.m3u>
-	ForceType application/octet-stream
-	Header set Content-Disposition attachment
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
 </Files>
 
 <Files *.xspf>
-	ForceType application/octet-stream
-	Header set Content-Disposition attachment
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
 </Files>
 
 RewriteEngine On
+
+## If website url is root or subdomain, else comment with ## in front
+
 RewriteBase / 
-
 RewriteRule ^vlc\.m3u$ /playlist.php [L]
-
 RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
+
+## If website url is in a folder change to your name/path of folder, here /radio) and uncomment the ##
+
+##RewriteBase /radio/
+##RewriteRule ^vlc\.m3u$ /radio/playlist.php [L]
+##RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]
+
+
 
 ##-----------------------------
 
