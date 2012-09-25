@@ -5,7 +5,7 @@ To play radio stream and latest podcast from RSS.
 
 Source : <https://github.com/fluaten/PlaylistRSS>
 
-Demo : <http://playlistrss.fluate.net>
+Demo : <http://playlistrss.fluate.net> / Demo (FR) : <http://playlistrss.fluate.net/fr>
 
 Made with Simplepie for converting RSS feed. <http://simplepie.org/>
 
@@ -15,7 +15,7 @@ Made with Simplepie for converting RSS feed. <http://simplepie.org/>
 
  1. Download zip : <https://github.com/fluaten/PlaylistRSS/zipball/master>
  2. Extract and copy the folder by ftp on the website.
- 3. Create a subdomain (ex: http://radio.domain.com) pointing to the ftp folder or modify the folder name.
+ 3. Create a subdomain (ex: http://radio.domain.com) pointing to the ftp folder or modify the folder name (ex: http://www.domain.com/radio).
  4. Open **config.php**
  5. Change `$urldomain` to subdomain or folder url.
  6. Choose Language (English or French), uncomment selected language.
@@ -24,7 +24,7 @@ Made with Simplepie for converting RSS feed. <http://simplepie.org/>
  9. Open **playlist.php**
  10. Add/modify playlist element after `/* --- Playlist start ---- */`.
  11. Save **playlist.php** on the ftp.
- 12. Visit the website (ex: http://radio.domain.com)
+ 12. Visit the website (ex: http://radio.domain.com or http://www.domain.com/radio)
  13. Download the playlist, open it with VLC http://www.videolan.org/ or else.	
  14. Or copy paste website url in VLC (Media > Open network Stream)
 
