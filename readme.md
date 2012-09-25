@@ -16,27 +16,26 @@ Made with Simplepie for converting RSS feed. <http://simplepie.org/>
  1. Download zip : <https://github.com/fluaten/PlaylistRSS/zipball/master>
  2. Extract and copy the folder by ftp on the website.
  3. Create a subdomain (ex: http://radio.domain.com) pointing to the ftp folder.
- ---
- ---
- Or modify the folder name (ex: http://www.domain.com/radio).
- 
- If PlaylistRSS is not in a subdomain but in a folder :
+ 	Or modify the folder name (ex: http://www.domain.com/radio).
+   ---
+   
+ 	If PlaylistRSS is not in a subdomain but in a folder :
  
  	1. Open **.htaccess**
  	2. Comment with \#\# in front of each line :
  
- \#\#RewriteBase / 
- \#\#RewriteRule ^vlc\.m3u$ /playlist.php [L]
- \#\#RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
+	\#\#RewriteBase / 
+	\#\#RewriteRule ^vlc\.m3u$ /playlist.php [L]
+	\#\#RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
  
  	3. Uncomment and change the path name to the folder (here /radio) :
  
- RewriteBase /radio/
- RewriteRule ^vlc\.m3u$ /radio/playlist.php [L]
- RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]
+	RewriteBase /radio/
+	RewriteRule ^vlc\.m3u$ /radio/playlist.php [L]
+	RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]
  
  	4. Save **.htaccess** on the ftp
- ---
+	
  ---
  4. Open **config.php**
  5. Change `$urldomain` to subdomain or folder url.
