@@ -84,10 +84,10 @@ Video streaming is still experimental, and freeze sometimes, it depends on how V
 You need to do two modifications to VLC :
 
 To read a youtube video in VLC, replace the content of youtube.lua with :
-<http://git.videolan.org/?p=vlc.git;a=blob;f=share/lua/playlist/youtube.lua>
+<http://git.videolan.org/?p=vlc.git;a=blob_plain;f=share/lua/playlist/youtube.lua>
 
 To read a vimeo video in VLC, replace the content of vimeo.lua with :
-<http://git.videolan.org/?p=vlc.git;a=blob;f=share/lua/playlist/vimeo.lua>
+<http://git.videolan.org/?p=vlc.git;a=blob_plain;f=share/lua/playlist/vimeo.lua>
 
 		Modify lua script here :
 		Windows : C:/Program Files/VideoLAN/VLC/lua/playlist/
@@ -141,7 +141,7 @@ To read a vimeo video in VLC, replace the content of vimeo.lua with :
 
 // playlist_dailymotion_user(Title, search term, number of elements);
 
-`playlist_dailymotion_playlist('Title', 'dailymotion playlistID', 20);
+`playlist_dailymotion_playlist('Title', 'dailymotion playlistID', 20);`
 
 // playlist_dailymotion_playlist(Title, dailymotion playlist name, number of elements);
 
