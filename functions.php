@@ -1,24 +1,9 @@
 <? 
 require 'config.php';
 require 'simplepie/simplepie_1.3.compiled.php'; 
-// simplepie require .htaccess with 
-// SetEnv SESSION_USE_TRANS_SID 0
-// SetEnv PHP_VER 5
-// On some configuration
+include 'functions_video.php'; // include the functions to transform video playlist (simplepie)
 
 function header_playlist() { print "#EXTM3U\r\n"; }
-
-function category_title($title)
-{	
-	global $urldomain;
-	print "#EXTINF:,. - $title __________________________________________________________________________________________________________________________________________________________________________________________________________________________________\r
-	$urldomain/wait.mp3\r\n";
-}
-
-function playlist_radio_stream($title, $feed_url) {
-	print "\r#EXTINF:,.$title - $title                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           . \r
-	$feed_url\r\n\r\n";
-}
 
 function playlist_space()
 { 
@@ -27,21 +12,24 @@ function playlist_space()
 $urldomain/wait.mp3\r\n\r\n"; 
 }
 
-function playlist_podcast($title, $feed_url, $items)
-{
+function category_title($title)
+{	
 	global $urldomain;
 	print "#EXTINF:,. - $title __________________________________________________________________________________________________________________________________________________________________________________________________________________________________\r
-		$urldomain/wait.mp3\r\n";
+	$urldomain/wait.mp3\r\n";
+}
 
-	$feed = new SimplePie(); 
-	$feed->set_feed_url($feed_url);
-	$feed->set_item_class(); 
-	$feed->enable_cache(true); 
-	$feed->strip_htmltags();
-	$feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache'); 
-	$feed->init(); 
-	$feed->handle_content_type();  
+function playlist_radio_stream($title, $radio_url) {
+	print "\r#EXTINF:,$title - $title                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           . \r
+	$radio_url\r\n\r\n";
+}
+
+function playlist_podcast($title, $podcast_url, $items)
+{
+	category_title($title);
+	$feed = new SimplePie(); $feed->set_feed_url($podcast_url); $feed->set_item_class(); 
+	$feed->enable_cache(true); $feed->strip_htmltags(); $feed->set_cache_duration(3600);
+	$feed->set_cache_location('simplepie/cache'); $feed->init(); $feed->handle_content_type();  
 	$i = 1;
 	foreach($feed->get_items(0, $items) as $item) 
 	{  
@@ -61,22 +49,14 @@ function playlist_podcast($title, $feed_url, $items)
 		$i++;
 		 
 	}	
-	
-	print "\r#EXTINF:,. -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           . \r
-		$urldomain/wait.mp3\r\n\r\n"; 
+	playlist_space();
 }
 
 function playlist_podcast_nospace($title, $feed_url, $items)
 {
-	$feed = new SimplePie(); 
-	$feed->set_feed_url($feed_url);
-	$feed->set_item_class(); 
-	$feed->enable_cache(true); 
-	$feed->strip_htmltags();
-	$feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache'); 
-	$feed->init(); 
-	$feed->handle_content_type();  
+	$feed = new SimplePie(); $feed->set_feed_url($podcast_url); $feed->set_item_class(); 
+	$feed->enable_cache(true); $feed->strip_htmltags(); $feed->set_cache_duration(3600);
+	$feed->set_cache_location('simplepie/cache'); $feed->init(); $feed->handle_content_type();  
 	$i = 1;
 	foreach($feed->get_items(0, $items) as $item) 
 	{  

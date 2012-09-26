@@ -37,7 +37,8 @@ if (LANG == "EN") {
 	$xspfloading = "Chargement..";
 	
 }
-
+	//Video settings
+	define("HD","TRUE"); // Set youtube video to HD format (best setting) 
 
 /*  
 

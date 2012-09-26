@@ -45,6 +45,49 @@ playlist_podcast('Title of the podcast', 'http://urlofthepodcastrss', 10);
 playlist_podcast_nospace('Title of the podcast', 'http://urlofthepodcastrss', 10)  
 // playlist_podcast(Title, url, number of elements) (no space at the end)
 
+Youtube ------------------------
+
+playlist_youtube_user('Title', 'user ID', 20);
+// playlist_youtube_user(Title, youtube username, number of elements);
+
+playlist_youtube_user_favorite('Title', 'user ID', 20);
+// playlist_youtube_user_favorite(Title, youtube username, number of elements);
+
+playlist_youtube_normal('Title', 'http://urlofthevideorss', 10);
+// playlist_youtube_normal(Title, feedurl, number of elements);
+
+playlist_youtube_playlist('Title', 'Playlist ID', 20);
+// playlist_youtube_playlist(Title, Playlist ID, number of elements); // Playlist ID ex : 39BF9545D740ECFF
+
+Vimeo ------------------------
+
+playlist_vimeo_user('Title', 'vimeo userID', 20);
+// playlist_vimeo_user(Title, vimeo username, number of elements);
+
+playlist_vimeo_likes('Title', 'vimeo userID', 20);
+// playlist_vimeo_likes(Title, vimeo username, number of elements);
+
+playlist_vimeo_groups('Title', 'vimeo groupID', 20);
+// playlist_vimeo_groups(Title, vimeo group name, number of elements);
+
+playlist_vimeo_channels('Title', 'vimeo channelID', 20);
+// playlist_vimeo_channels(Title, vimeo channel name, number of elements);
+
+Dailymotion ------------------
+
+playlist_dailymotion_user('Title', 'dailymotion userID', 20);
+// playlist_dailymotion_user(Title, dailymotion username, number of elements);
+
+playlist_dailymotion_search('Title', 'dailymotion search term', 20);
+// playlist_dailymotion_user(Title, search term, number of elements);
+
+playlist_dailymotion_playlist('Title', 'dailymotion playlistID', 20);
+// playlist_dailymotion_playlist(Title, dailymotion playlist name, number of elements);
+
+playlist_dailymotion_groups('Title', 'dailymotion groupID', 20);
+// playlist_dailymotion_groups(Title, dailymotion group name, number of elements);
+
+
 */
 
 
