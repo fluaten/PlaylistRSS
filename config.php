@@ -8,7 +8,7 @@ http://simplepie.org/
 */
 
 $urldomain = "http://radio.domain.com"; 
-// Url of the website and playlist (subdomain if possible)
+// Url of the website and playlist  (ex: http://radio.domain.com or http://www.domain.com/radio)
 // Simplepie (podcast) won't work on restricted hosting.
 
 // Change here the frontend text of index.php in folder /playlist
@@ -46,7 +46,7 @@ Modify playlist.php to add radio or podcast.
 
 Set folder simplepie/cache permission to 705 if Simplepie doesn't create cache files.
 
-Be sure to have a file named .htaccess at the root folder with :
+Be sure to have a file named .htaccess with :
 
 ##---------.htaccess-------------
 
