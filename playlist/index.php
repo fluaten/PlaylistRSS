@@ -1,4 +1,6 @@
-<?php include '../config.php'; ?>
+<?php include '../config.php'; 
+if(ereg('VLC', $_SERVER["HTTP_USER_AGENT"])) { echo $urldomain."/vlc.m3u"; } else {
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -31,3 +33,4 @@
 	</div>
 </body>
 </html>
+<?php } ?>
