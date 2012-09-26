@@ -7,9 +7,15 @@ Source : <https://github.com/fluaten/PlaylistRSS>
 
 Demo : <http://playlistrss.fluate.net> / Demo (FR) : <http://playlistrss.fluate.net/fr>
 
+Author : Nicolas Boillot <http://www.fluate.net>
+
 Made with Simplepie for converting RSS feed. <http://simplepie.org/>
 
 ![VLC](http://playlistrss.fluate.net/img/rssplaylist.png)
+
+### Required
+
+A webhosting supporting PHP 5 and custom url rewriting.
 
 ### Install
 
@@ -81,7 +87,7 @@ Copy paste line below in **playlist.php** and change url and title.
 
 Video streaming is still experimental, and freeze sometimes, it depends on how VLC read these stream. 
 
-You need to do two modifications to VLC :
+You need to do two modifications to VLC (latest version) :
 
 To read a youtube video in VLC, replace the content of youtube.lua with :
 <http://git.videolan.org/?p=vlc.git;a=blob_plain;f=share/lua/playlist/youtube.lua>

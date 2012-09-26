@@ -41,11 +41,11 @@ function playlist_youtube_user_favorite($title, $youtube_username, $items)
 		$itemLink = substr($streamLink, 0, -26).$hdurl; 
 		$itemDescription = shorten($item->get_description(),100);
 		$feed->strip_htmltags($strip_htmltags);
-		$txt = $item->get_description();
+		/*$txt = $item->get_description();
 		$re1='.*?';	# Non-greedy match on filler
 		$re2='((?:(?:[0-5][0-9])|(?:[2][0-3])|(?:[0-9])):(?:[0-5][0-9])(?::[0-5][0-9])?(?:\\s?(?:am|AM|pm|PM))?)<';	
 		if ($c=preg_match_all ("/".$re1.$re2."/is", $txt, $matches)) { $timeY=$matches[1][0]; }
-		$duration = MinSecToSeconds($timeY);
+		$duration = MinSecToSeconds($timeY);*/
 		$itemTitle = $item->get_title(); 
 		print "#EXTINF:$duration,$date / $title - $itemTitle / $itemDescription\r\n$itemLink\r\n";
 		$i++; }
@@ -55,7 +55,7 @@ function playlist_youtube_user_favorite($title, $youtube_username, $items)
 //Playlist regular youtube rss (only direct links in a feed, ex:delicious.com)
 function playlist_youtube_normal($title, $feed_url, $items)
 { 
-	category_title($title.' (youtube favorite)');
+	category_title($title);
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
 	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type(); 
