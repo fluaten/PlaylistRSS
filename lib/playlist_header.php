@@ -1,5 +1,5 @@
 <?php
-include '../config.php';	
+include 'config.php';	
 
  if ($_GET["type"] == "m" ) {
 	include 'lib/functions_html.php'; // include the functions to transform url in rss feed.
