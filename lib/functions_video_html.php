@@ -35,7 +35,7 @@ function playlist_youtube_user($title, $youtube_username, $items)
 		
 		    echo '
 				
-					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$duration2.'</span></a></li>	
+					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$duration2.' / '.$title.'</span></a></li>	
 			
 			';
 		$i++; }
@@ -65,7 +65,7 @@ function playlist_youtube_user_favorite($title, $youtube_username, $items)
 		$itemtitle = $item->get_title(); 
 		    echo '
 				
-					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 ';
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -92,7 +92,7 @@ function playlist_youtube_normal($title, $feed_url, $items)
 		
 		    echo '
 				
-					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 
 ';
 		$i++; 
@@ -137,7 +137,7 @@ function playlist_youtube_playlist($title, $youtube_playlist, $items)
 		
 		    echo '
 				
-					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$duration2.'</span></a></li>	
+					<li><a class="youtube" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$duration2.' / '.$title.'</span></a></li>	
 		';
 		$i++; 
 	}
@@ -162,7 +162,7 @@ function playlist_dailymotion_user($title, $daily_user, $items)
 		
 		    echo '
 				
-					<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+					<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	';
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -185,7 +185,7 @@ function playlist_dailymotion_groups($title, $daily_group, $items)
 		$data = $feed->sanitize($itemdescription, SIMPLEPIE_CONSTRUCT_TEXT);	
 		$itemtitle = $item->get_title(); 
 		    echo '
-				<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+				<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	';
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -207,7 +207,7 @@ function playlist_dailymotion_playlist($title, $daily_playlistID, $items)
 		$feed->strip_htmltags($strip_htmltags);
 		$itemtitle = $item->get_title(); 
 		    echo '
-				<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+				<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	';
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -229,7 +229,7 @@ function playlist_dailymotion_search($title, $daily_s, $items)
 		$feed->strip_htmltags($strip_htmltags);
 		$itemtitle = $item->get_title(); 
 		    echo '
-				<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+				<li><a class="daily" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	';
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -250,7 +250,7 @@ function playlist_vimeo_user($title, $vimeo_user, $items)
 		$feed->strip_htmltags($strip_htmltags);
 		$itemtitle = $item->get_title(); 
 		    echo '
-				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	';
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -274,7 +274,7 @@ function playlist_vimeo_likes($title, $vimeo_user, $items)
 		$feed->strip_htmltags($strip_htmltags);
 		$itemtitle = $item->get_title(); 
 		    echo '
-				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	';  
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -297,7 +297,7 @@ function playlist_vimeo_groups($title, $vimeo_groupname, $items)
 		$itemLink = "http://vimeo.com/".$txt;
 		$itemtitle = $item->get_title(); 
 		    echo '
-				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	'; 
 		$i++; }
 		playlist_space();	echo '</ul>';
@@ -320,7 +320,7 @@ function playlist_vimeo_channels($title, $vimeo_channelname, $items)
 		$itemLink = "http://vimeo.com/".$txt;
 		$itemtitle = $item->get_title(); 
 		    echo '
-				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.'</span></a></li>	
+				<li><a class="vimeo" href="'.$GLOBALS['reff'].$itemLink.'">'.$itemtitle.'<span class="time"> '.$date.' / '.$title.'</span></a></li>	
 	';
 		$i++; }
 		playlist_space();	echo '</ul>';

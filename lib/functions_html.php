@@ -86,7 +86,7 @@ function playlist_podcast($title, $podcast_url, $items)
 		    echo '
 				<li>
 					<a class="podcast" href="'.$_link.'">'.$xtitle.' 
-						<span class="time"> '.$date.' / '.$durationminute.'</span>
+						<span class="time"> '.$date.' / '.$durationminute.' / '.$title.'</span>
 					</a>
 				</li>
 		    ';
@@ -130,7 +130,7 @@ function playlist_podcast_nospace($title, $podcast_url, $items)
 				
 				<li>
 					<a class="podcast" href="'.$_link.'">'.$xtitle.' 
-						<span class="time"> '.$date.' / '.$durationminute.'</span>
+						<span class="time"> '.$date.' / '.$durationminute.' / '.$title.'</span>
 					</a>
 				</li>
 
