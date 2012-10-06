@@ -1,11 +1,25 @@
-	
-	body#htmlrender {
-	 position: relative; - webkit - text - size - adjust: none;
-    min - height: 416px;
+/* @override http://playlistrss.fluate.net/lib/css_style.css */
+
+body#htmlrender {
+
+	 - webkit - text - size - adjust: none;
+
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 	background-color: #000;
 	text-transform: none;
 }
+
+div.main {
+	  
+	width: 480px;
+	background-color: #111111;
+	margin: 20px auto 80px;
+	
+}
+
+
+
+
 
 div.titre {
 	margin: 16px;
@@ -26,34 +40,20 @@ div.header {
 	margin-top: 50px;
 }
 
-span.dl {
-	padding: 5px;
-	border-bottom: 1px solid #fffeff;
-	font-size: 40px;
-}
 
 
-h5.footer a {
-		text-decoration: none;
-	color: #8e0f05;
-	font-size: 11px;
-	font-weight: normal;
-	font-style: normal;
-}
-
-h5.footer a:hover {
-		text-decoration: underline;
-	color: #000;
-
-}
 
 #htmlrender h5.footer {
 	color: #feffff;
 	text-align: right;
 	padding: 10px;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: normal;
 	font-style: normal;
+	margin: 15px 0 0;
+	border-top-style: solid;
+	border-top-width: 1px;
+	background-color: #000;
 }
 
 
@@ -102,60 +102,86 @@ div.nm {
 	margin-right: auto;
 	margin-left: auto;
 	margin: 0;
+	border-left: 1px solid #101010;
+	border-right: 1px solid #101010;
+	
 }
 
 
 
 #htmlrender ul li {
 	list-style-type: none;
-	margin-bottom: 12px;
 	display: block;
 	
-	font-size: 26px;
-	padding: 15px;
+	font-size: 18px;
 
 	text-decoration: none;
-	line-height: 49px;
 	letter-spacing: 0;
 	word-spacing: -1px;
-	border-bottom: 1px solid #feffff;
+	border-bottom: 1px solid #101010;
+	text-align: left;
+	padding-top: 15px;
 }
 
 #htmlrender ul.category {
 	text-align: center;
 }
 
-#htmlrender ul li a span.time {
+
+#htmlrender ul li span.urlradio,span.url  {
 	display: block;
-	font-size: 22px;
+	font-size: 15px;
+	padding: 0 15px;
+
+	letter-spacing: 0;
+	color: #000;
+	margin-top: 10px;
+}
+
+#htmlrender ul.category li span.url {
+	margin: 5px 0 0;
+	color: #797979;
+	font-size: 12px;
+}
+
+#htmlrender ul li span.urlradio, #htmlrender ul li a span.time {
+	display: block;
+	font-size: 15px;
 	padding: 0 15px;
 	background-color: #919191;
-	margin-top: 16px;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 	color: #000;
+	margin-top: 10px;
 }
 
 #htmlrender h1.header {
-	color: #feffff;
+	color: #fefffe;
 	font-weight: normal;
 	font-style: normal;
 	letter-spacing: -2px;
-	font-size: 36px;
+	font-size: 24px;
 	text-align: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 22px;
+	margin: 0;
+	background-color: #000;
 }
 
 #htmlrender a.dlink  {
 	display: block;
 	text-align: center;
 	color: #d5d5d5;
+	padding: 10px;
+	background-color: #5e5e5e;
 	text-decoration: none;
-	letter-spacing: -3px;
+	border-top: 1px solid #797979;
+	border-bottom: 1px solid #303030;
+	margin-bottom: 30px;
 }
 
 #htmlrender a.dlink:hover  {
-	color: #feffff;
+	color: #212121;
+	background-color: #feffff;
 }
 
 
@@ -167,44 +193,81 @@ div.nm {
 	letter-spacing: -1px;
 	text-align: center;
 	margin: 0;
-	padding-top: 10px;
+	padding-top: 15px;
 	border-top: 1px solid #feffff;
+	font-size: 16px;
+	background-color: #232323;
+	padding-bottom: 15px;
 }
 
 #htmlrender span.domain h3 {
-	color: #000;
+	color: #3c3c3c;
 	font-weight: normal;
 	font-style: normal;
 	text-align: center;
-	font-size: 30px;
-	margin: 32px 0 0;
+	font-size: 16px;
 	padding: 15px;
 	background-color: #feffff;
+	letter-spacing: -1px;
+	margin: 0 0 5px;
 }
+
+#htmlrender span.domain h3:hover {
+	color: #000;
+}
+
+#htmlrender div.main div.up a.uplink {
+	color: #feffff;
+	text-decoration: none;
+	font-size: 24px;
+	letter-spacing: 1px;
+	
+}
+
+
+#htmlrender div.main div.up a.uplink:hover {
+	color: #5e5e5e;
+}
+
+
+#htmlrender div.main div.up {
+	position: fixed;
+	bottom: 3px;
+	right: 10px;
+	display: inline;
+	
+}
+
 
 #htmlrender span.domain h4{
 	color: #a9a9a9;
-	text-align: center;
+	
 	font-weight: normal;
 	font-style: normal;
+	display: block;
 	margin: 0;
-}
-
-#htmlrender span.domain h4 {
-	
+	font-size: 10px;
+	background-color: #000;
+	padding: 0 11px 15px;
+	text-align: center;
 }
 
 #htmlrender span.space {
 	display: block;
-	background-color: #212121;
-	padding: 15px;
+	background-color: #000000;
+	padding-top: 30px;
 }
 
 
 
 #htmlrender ul.category li {
-	background-color: #feffff;
+	background-color: #eaeaea;
 	color: #212121;
+	padding-left: 15px;
+	border-top: 1px solid #feffff;
+	border-bottom: 1px solid #424242;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 body#htmlrender {
@@ -213,12 +276,18 @@ body#htmlrender {
 
 #htmlrender ul li a {
 	color: #feffff;
-	
-	text-decoration: none;
 	margin: 0;
-	padding: 16px;
-	display: inline-block;
-	font-size: 42px;
+	padding: 15px 15px 0;
+	display: block;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+#htmlrender ul li a span.time {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top-style: solid;
+	border-top-width: 1px;
 }
 	
 #htmlrender ul li a:hover {
@@ -241,18 +310,7 @@ a.radio {
 	background-color: #d5d5d5;
 }
 
-#htmlrender ul li span.urlradio {
-	font-weight: normal;
-	font-style: normal;
-	font-size: 3px;
-	margin-left: 15px;
-}
 
-#htmlrender ul li span.urlradio,span.url {
-	display: block;
-	font-size: 14px;
-	color: #919191;
-}
 
 span#url.copyvlc textarea#url {
 	text-align: left;

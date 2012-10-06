@@ -27,7 +27,7 @@ A webhosting supporting PHP 5 and custom url rewriting.
  		If PlaylistRSS is not in a subdomain but in a folder :
  
  		1. Open .htaccess in the folder.
- 		2. Comment with ## in front of these 3 lines :
+ 		2. Comment with ## in front of these 4 lines :
  
 		##RewriteBase /
 		##RewriteRule ^vlc\.m3u$ /playlist.php [L]

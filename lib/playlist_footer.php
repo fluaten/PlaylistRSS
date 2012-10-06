@@ -1,5 +1,5 @@
 <?php
 
-if ($_GET["type"] == "m" ) {echo '<h5 class="footer">'.$footer.' | '.$vlclink.'</h5></body></html>';}
+if ($_GET["type"] == "m" ) {echo '<h5 class="footer">'.$footer.' '.$vlclink.'</h5></div></body></html>';}
 	
 ?>

@@ -4,7 +4,7 @@ require 'simplepie/simplepie_1.3.compiled.php';
 include 'functions_video_html.php'; // include the functions to transform video playlist (simplepie)
 
 function header_playlist() { 
-	global $titledomainname, $description, $urldomain, $downloadtext, $copyinvlc;
+	global $titledomainname, $description, $urldomain, $downloadtext, $copyinvlc, $urlchange;
 	if(ereg('VLC', $_SERVER["HTTP_USER_AGENT"])) { echo $urldomain."/vlc.m3u"; exit; }
 	echo '
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -15,14 +15,21 @@ function header_playlist() {
 			<title>'.$titledomainname.'</title>
 			<link rel="stylesheet" type="text/css" href="lib/css_style.css" />
 		</head>
-		<body id="htmlrender" onload=""><a name="top"></a>';
-	
-		echo '<h1 class="header">'.$titledomainname.'</h1>';
-		echo '<h2 class="desc">'.$description.'</h2>';
-		echo '<span class="domain"><h3>'.$urldomain.'</h3><br><h4>'.$copyinvlc.'</h4></span>';
+		<body id="htmlrender" onload=""><div class="main">
+		<a name="top"></a>
+		<div class="up">
+			<a href="#top" class="uplink">&#8963;</a>
+		</div>
+		<h1 class="header">'.$titledomainname.'</h1>
+		<h2 class="desc">'.$description.'</h2>
+		<span class="domain"><h3>'.$urldomain.'</h3><h4>'.$copyinvlc.'</h4>
+		
+		';
 		if ($urldomain == "http://radio.domain.com") {echo '<br><h4>'.$urlchange.'</h4><br>';}
 		$urlxspf = str_replace("/", "_", substr($urldomain, 7));
-		echo '<br><br><a class="dlink" href="'.$urldomain.'/Playlist_'.$urlxspf.'.xspf" rel="alternate" target=_blank ><span class="dl">'.$downloadtext.'</span></a><br><br>';
+		echo '</span><a class="dlink" href="'.$urldomain.'/Playlist_'.$urlxspf.'.xspf" rel="alternate" target=_blank >
+		<span class="dl">'.$downloadtext.'</span>
+		</a>';
  
  }
 
@@ -44,13 +51,13 @@ function playlist_radio_stream($title, $radio_url) {
     echo '
 	<ul>
         <li>
-		<a  class="radio" href="'.$radio_url.'">Radio / '.$title.'</a>
-		<br>
-		<span class="urlradio">'.$radio_url.'</span>
+		<a  class="radio" href="'.$radio_url.'">Radio / '.$title.'
+		<span class="time"> '.$radio_url.'</span></a>
 		</li>
     </ul>
 	';
 }
+
 
 function playlist_podcast($title, $podcast_url, $items)
 {
@@ -60,7 +67,7 @@ function playlist_podcast($title, $podcast_url, $items)
 	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();  
 	$i = 1;
 	echo '<ul>';
-	foreach($feed->get_items(0, 3) as $item) 
+	foreach($feed->get_items(0, $GLOBALS['limititems']) as $item) 
 	{  
 		$mediaEnclosures = $item->get_enclosures(); 
 		foreach ($mediaEnclosures as $enclosure) 

@@ -1,10 +1,12 @@
 <?php
 
 $reff = "http://www.dereferer.org/?";
+$limititems = 5;
 
 //Playlist user youtube
 function playlist_youtube_user($title, $youtube_username, $items)
-{ 	
+{ 	$items = $GLOBALS['limititems'];
+
 	$feed_url = "http://gdata.youtube.com/feeds/base/users/".$youtube_username."/uploads?alt=rss&v=2&orderby=published";
 	category_title($title.' (youtube user) <span class="url">'.$youtube_username.'</span>');	echo '<ul>';
 	
@@ -45,7 +47,8 @@ function playlist_youtube_user($title, $youtube_username, $items)
 //Playlist user favorite youtube
 function playlist_youtube_user_favorite($title, $youtube_username, $items)
 { 	
-		$feed_url = "http://gdata.youtube.com/feeds/api/users/".$youtube_username."/favorites?orderby=updated";
+		$items = $GLOBALS['limititems'];
+	$feed_url = "http://gdata.youtube.com/feeds/api/users/".$youtube_username."/favorites?orderby=updated";
 	category_title($title.' (youtube user)<span class="url">'.$youtube_username.'</span>');
 	echo '<ul>';
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
@@ -73,7 +76,7 @@ function playlist_youtube_user_favorite($title, $youtube_username, $items)
 
 //Playlist regular youtube rss (only direct links in a feed, ex:delicious.com)
 function playlist_youtube_normal($title, $feed_url, $items)
-{ 
+{ 	$items = $GLOBALS['limititems'];
 	category_title($title.' (youtube favorite)<span class="url">'.$feed_url.'</span>');
 	echo '<ul>';
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
@@ -81,7 +84,7 @@ function playlist_youtube_normal($title, $feed_url, $items)
 	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type(); 
 	$i = 1;
 	if ($hd = 1) { $hdurl =""; } else { $hdurl = "&fmt=18"; }
-	foreach($feed->get_items(0, 20) as $item) 
+	foreach($feed->get_items(0, $items) as $item) 
 	{  
 		$streamLink=$item->get_link();  
 		$date=$item->get_date('Y.m.d'); 
@@ -102,7 +105,7 @@ function playlist_youtube_normal($title, $feed_url, $items)
 
 //Playlist playlist youtube
 function playlist_youtube_playlist($title, $youtube_playlist, $items)
-{ 
+{ 	$items = $GLOBALS['limititems'];
 	$feed_fav_ytube = "http://gdata.youtube.com/feeds/api/playlists/".$youtube_playlist;
 	//$url_fav_ytube = "https://www.youtube.com/playlist?list=".$youtube_playlist;
 	category_title($title.' (youtube playlist) <span class="url">'.$youtube_playlist.'</span>');
@@ -148,6 +151,7 @@ function playlist_youtube_playlist($title, $youtube_playlist, $items)
 function playlist_dailymotion_user($title, $daily_user, $items)
 {
 	category_title($title.' (dailymotion_user)<span class="url">'.$daily_user.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://www.dailymotion.com/rss/user/".$daily_user."/1"; 
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
@@ -172,6 +176,7 @@ function playlist_dailymotion_user($title, $daily_user, $items)
 function playlist_dailymotion_groups($title, $daily_group, $items)
 { 
 	category_title($title.' (dailymotion groups)<span class="url">'.$daily_group.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://www.dailymotion.com/rss/group/".$daily_group."/1";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
@@ -195,6 +200,7 @@ function playlist_dailymotion_groups($title, $daily_group, $items)
 function playlist_dailymotion_playlist($title, $daily_playlistID, $items)
 { 
 	category_title($title.' (dailymotion playlist)<span class="url">'.$daily_playlistID.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://www.dailymotion.com/rss/playlist/".$daily_playlistID."/1";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
@@ -217,6 +223,7 @@ function playlist_dailymotion_playlist($title, $daily_playlistID, $items)
 function playlist_dailymotion_search($title, $daily_s, $items)
 { 
 	category_title($title.' (dailymotion search)<span class="url">'.$daily_s.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://www.dailymotion.com/rss/playlists/relevance/search/".$daily_s."/1";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
@@ -238,6 +245,7 @@ function playlist_dailymotion_search($title, $daily_s, $items)
 //Playlist user feed vimeo
 function playlist_vimeo_user($title, $vimeo_user, $items)
 {	category_title($title.' (vimeo user)<span class="url">'.$vimeo_user.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://vimeo.com/".$vimeo_user."/videos/rss"; 
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
@@ -262,6 +270,7 @@ function playlist_vimeo_user($title, $vimeo_user, $items)
 function playlist_vimeo_likes($title, $vimeo_user, $items)
 { 
 	category_title($title.' (vimeo likes)<span class="url">'.$vimeo_user.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://vimeo.com/".$vimeo_user."/likes/rss";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
@@ -284,6 +293,7 @@ function playlist_vimeo_likes($title, $vimeo_user, $items)
 function playlist_vimeo_groups($title, $vimeo_groupname, $items)
 { 
 	category_title($title.' (vimeo groups)<span class="url">'.$vimeo_groupname.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://vimeo.com/groups/".$vimeo_groupname."/videos/rss";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
@@ -307,6 +317,7 @@ function playlist_vimeo_groups($title, $vimeo_groupname, $items)
 function playlist_vimeo_channels($title, $vimeo_channelname, $items)
 { 
 	category_title($title.' (vimeo channels)<span class="url">'.$vimeo_channelname.'</span>');	echo '<ul>';
+	$items = $GLOBALS['limititems'];
 	$feed_url = "http://vimeo.com/channels/".$vimeo_channelname."/videos/rss";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
