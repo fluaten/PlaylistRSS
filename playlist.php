@@ -1,6 +1,6 @@
 <?
-include 'functions.php'; // include the functions to transform url in playlist (simplepie)
-header_playlist(); // Header of the m3u
+include 'lib/playlist_header.php'; // include the functions to transform url in playlist (simplepie)
+if ($_GLOBAL["showlist"]) { // Hide or show playlist in html
 
 /* --- Playlist start ---- */
 
@@ -90,5 +90,7 @@ playlist_dailymotion_groups('Title', 'dailymotion groupID', 20);
 
 */
 
+}
 
+include 'lib/playlist_footer.php'; 
 ?>

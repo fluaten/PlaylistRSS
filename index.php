@@ -57,10 +57,12 @@ if(ereg('Opera', $ua
  ) || ereg('Gecko', $ua
  ) || eregi('NetPositive', $ua
  ) || ereg('curl', $ua
+ ) || ereg('ELinks', $ua
+ ) || ereg('AmigaVoyager', $ua
  ))
 {
-header ('location: playlist');	
+header ('location: m');	
 }
 echo $urldomain."/vlc.m3u"; 
-
 ?>
+

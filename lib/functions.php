@@ -29,7 +29,7 @@ function playlist_podcast($title, $podcast_url, $items)
 	category_title($title);
 	$feed = new SimplePie(); $feed->set_feed_url($podcast_url); $feed->set_item_class(); 
 	$feed->enable_cache(true); $feed->strip_htmltags(); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache'); $feed->init(); $feed->handle_content_type();  
+	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();  
 	$i = 1;
 	foreach($feed->get_items(0, $items) as $item) 
 	{  
@@ -56,7 +56,7 @@ function playlist_podcast_nospace($title, $feed_url, $items)
 {
 	$feed = new SimplePie(); $feed->set_feed_url($podcast_url); $feed->set_item_class(); 
 	$feed->enable_cache(true); $feed->strip_htmltags(); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache'); $feed->init(); $feed->handle_content_type();  
+	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();  
 	$i = 1;
 	foreach($feed->get_items(0, $items) as $item) 
 	{  

@@ -1,6 +1,6 @@
 <?php
 /*
-Playlist Rss 0.1 / 2012
+Playlist Rss 0.2 / 2012
 https://github.com/fluaten
 
 Made with Simplepie for converting RSS feed.
@@ -11,6 +11,10 @@ $urldomain = "http://radio.domain.com";
 // Url of the website and playlist  (ex: http://radio.domain.com or http://www.domain.com/radio)
 // Simplepie (podcast) won't work on restricted hosting.
 
+// Show the list of each podcast and radio in html (mobile reader)
+
+	$display = TRUE;
+	
 // Change here the frontend text of index.php in folder /playlist
 
 define("LANG", "EN"); // English language
@@ -76,13 +80,14 @@ RewriteEngine On
 RewriteBase / 
 RewriteRule ^vlc\.m3u$ /playlist.php [L]
 RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
+RewriteRule ^m$ /playlist.php?type=m [L]
 
 ## If website url is in a folder change to your name/path of folder, here /radio) and uncomment the ##
 
 ##RewriteBase /radio/
 ##RewriteRule ^vlc\.m3u$ /radio/playlist.php [L]
 ##RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]
-
+##RewriteRule ^m$ /radio/playlist.php?type=m [L]
 
 
 ##-----------------------------

@@ -1,5 +1,5 @@
 <?
-include 'config.php';	
+include '../config.php';	
 
 header("Cache-Control: public");
 header("Content-Description: File Transfer");

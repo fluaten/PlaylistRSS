@@ -20,10 +20,12 @@ RewriteEngine On
 
 RewriteBase / 
 RewriteRule ^vlc\.m3u$ /playlist.php [L]
-RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
+RewriteRule ^Playlist_([^/]*)\.xspf$ /lib/vlc_xspf.php [L]
+RewriteRule ^m$ /playlist.php?type=m [L]
 
 ## If website url is in a folder change to your name/path of folder, here /radio) and uncomment the ##
 
 ##RewriteBase /radio/
 ##RewriteRule ^vlc\.m3u$ /radio/playlist.php [L]
-##RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]
+##RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/lib/vlc_xspf.php [L]
+##RewriteRule ^m$ /radio/playlist.php?type=m [L]

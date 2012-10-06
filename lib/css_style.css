@@ -1,0 +1,389 @@
+body#list {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: #eaeaea no-repeat center -16px;
+}
+
+textarea#url {
+	font: 24px Georgia, "Times New Roman", Times, serif;
+	color: #5e5e5e;
+	padding: 10px;
+	border-style: none;
+	margin-top: 10px;
+}
+
+span.copyvlc {
+	padding: 10px;
+	color: #feffff;
+}
+
+
+
+textarea#url:hover {
+	font: 24px Georgia, "Times New Roman", Times, serif;
+	padding: 10px;
+	background-color: #eaeaea;
+	color: #000;
+}
+
+
+div.titre {
+	margin: 16px;
+	font-size: 24px;
+	letter-spacing: -1px;
+	border-bottom: 1px solid #c0c0c0;
+}
+div.playlist {
+	margin: 5px 19px;
+	font-size: 15px;
+	line-height: 19px;
+	padding: 5px 10px;
+	border: 1px inset rgba(169,169,169,0.1);
+	background-color: rgba(255,254,255,0.36);
+}
+div.header {
+
+	margin-top: 50px;
+}
+#list div.m3u h3 {
+	font-size: 16px;
+	color: #424242;
+	font-weight: normal;
+	font-style: normal;
+	border-bottom: 1px solid #fffeff;
+	padding: 10px;
+}
+
+span.dl {
+	padding: 5px;
+	border-bottom: 1px solid #fffeff;
+	font-size: 40px;
+}
+
+#list div.header div.m3u h3.sub{
+	text-align: right;
+}
+
+h5.footer a {
+		text-decoration: none;
+	color: #8e0f05;
+	font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h5.footer a:hover {
+		text-decoration: underline;
+	color: #000;
+
+}
+
+#htmlrender h5.footer {
+	color: #feffff;
+	text-align: right;
+	padding: 10px;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+#htmlrender h5.footer a {
+		text-decoration: none;
+	color: #c0c0c0;
+	font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#htmlrender h5.footer a:hover {
+		text-decoration: underline;
+	color: #c0c0c0;
+
+}
+
+#htmlrender a.toplink {
+	padding: 15px;
+	display: block;
+	text-align: center;
+	color: #feffff;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 35px;
+	text-decoration: none;
+	letter-spacing: -2px;
+	background-color: #424242;
+}
+
+#htmlrender a.toplink:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+
+#list div.header div.m3u h5.footer  {
+
+	font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+	text-align: right;
+	border-top: 1px solid #feffff;
+	padding-top: 10px;
+	padding: 10px;
+}
+
+#list div.header div.m3u span.img a {
+	text-decoration: none;
+	color: #8e0f05;
+	font-size: 22px;
+}
+
+#list div.header div.m3u span.img a:hover {
+	color: #212121;
+}
+ #list div.m3u h1 {
+	display: inline;
+	margin-top: 0;
+	margin: 0;
+	padding: 10px 20px;
+	font: 29px Georgia, "Times New Roman", Times, serif;
+	width: 315px;
+	height: 34px;
+}
+
+#list div.header div.m3u div.nm h1 {
+	display: none;
+}
+
+form#url {
+	display: inline-block;
+}
+
+
+
+#list div.header div.m3u code {
+	display: inline-block;
+}
+
+#list div.header div.m3u span.img a span.dl {
+	letter-spacing: -1px;
+}
+span.img {
+	width: 580px;
+	display: block;
+	text-align: center;
+	margin-top: 33px;
+	padding: 1px;
+}
+
+#list div.header div.m3u span.img a img {
+	margin-top: 4px;
+	margin-left: 9px;
+}
+
+div.zr, #list div.playlist a {
+	text-decoration: none;
+	color: #9c560e;
+	border-left: 14px solid #eaeaea;
+	display: inline-block;
+	padding: 5px 5px 5px 15px;
+
+	border-bottom: 1px solid #fffeff;
+	width: 95%;
+}
+
+#list div.header div.m3u span.img a img {
+	padding-right: 11px;
+}
+
+div.nm {
+	display: inline-block;
+}
+
+#list div.header div.m3u div.vlc a {
+	text-decoration: none;
+	color: #000;
+	background-color: #fffeff;
+	padding: 5px;
+}
+
+
+
+#list div.header div.m3u div.vlc a:hover {
+	color: #8e0f05;
+	}
+	
+	
+	
+	body#htmlrender {
+	 position: relative; - webkit - text - size - adjust: none;
+    min - height: 416px;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	background-color: #000;
+	text-transform: none;
+}
+
+#htmlrender ul {
+	list-style-type: none;
+	padding: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin: 0;
+}
+
+
+
+#htmlrender ul li {
+	list-style-type: none;
+	margin-bottom: 12px;
+	display: block;
+	
+	font-size: 26px;
+	padding: 15px;
+
+	text-decoration: none;
+	line-height: 49px;
+	letter-spacing: 0;
+	word-spacing: -1px;
+	border-bottom: 1px solid #feffff;
+}
+
+#htmlrender ul.category {
+	text-align: center;
+}
+
+#htmlrender ul li a span.time {
+	display: block;
+	font-size: 22px;
+	padding: 0 15px;
+	background-color: #919191;
+	margin-top: 16px;
+	letter-spacing: -2px;
+	color: #000;
+}
+
+#htmlrender h1.header {
+	color: #feffff;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: -2px;
+	font-size: 36px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#htmlrender a.dlink  {
+	display: block;
+	text-align: center;
+	color: #d5d5d5;
+	text-decoration: none;
+	letter-spacing: -3px;
+}
+
+#htmlrender a.dlink:hover  {
+	color: #feffff;
+}
+
+
+
+#htmlrender h2.desc {
+	color: #feffff;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: -1px;
+	text-align: center;
+	margin: 0;
+	padding-top: 10px;
+	border-top: 1px solid #feffff;
+}
+
+#htmlrender span.domain h3 {
+	color: #000;
+	font-weight: normal;
+	font-style: normal;
+	text-align: center;
+	font-size: 30px;
+	margin: 32px 0 0;
+	padding: 15px;
+	background-color: #feffff;
+}
+
+#htmlrender span.domain h4{
+	color: #a9a9a9;
+	text-align: center;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0;
+}
+
+#htmlrender span.domain h4 {
+	
+}
+
+#htmlrender span.space {
+	display: block;
+	background-color: #212121;
+	padding: 15px;
+}
+
+
+
+#htmlrender ul.category li {
+	background-color: #feffff;
+	color: #212121;
+}
+
+body#htmlrender {
+	
+}
+
+#htmlrender ul li a {
+	color: #feffff;
+	
+	text-decoration: none;
+	margin: 0;
+	padding: 16px;
+	display: inline-block;
+	font-size: 42px;
+}
+	
+#htmlrender ul li a:hover {
+	color: #000;
+
+	text-decoration: none;
+	background-color: #d5d5d5;
+}
+		
+	
+a.radio {
+	color: #212121;
+}	
+	
+	span#url.copyvlc {
+	display: block;
+	text-align: center;
+	margin-bottom: 30px;
+	padding: 15px;
+	background-color: #d5d5d5;
+}
+
+#htmlrender ul li span.urlradio {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 3px;
+	margin-left: 15px;
+}
+
+#htmlrender ul li span.urlradio,span.url {
+	display: block;
+	font-size: 14px;
+	color: #919191;
+}
+
+span#url.copyvlc textarea#url {
+	text-align: left;
+	font: 32px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin-bottom: 30px;
+}
+	
+	

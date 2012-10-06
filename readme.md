@@ -32,6 +32,7 @@ A webhosting supporting PHP 5 and custom url rewriting.
 		##RewriteBase /
 		##RewriteRule ^vlc\.m3u$ /playlist.php [L]
 		##RewriteRule ^Playlist_([^/]*)\.xspf$ /vlc_xspf.php [L]
+		##RewriteRule ^m$ /playlist.php?type=m [L]
 	
  
  		3. Uncomment and change the path name to the folder (here /radio) :
@@ -39,21 +40,23 @@ A webhosting supporting PHP 5 and custom url rewriting.
 		RewriteBase /radio/
 		RewriteRule ^vlc\.m3u$ /radio/playlist.php [L]
 		RewriteRule ^Playlist_([^/]*)\.xspf$ /radio/vlc_xspf.php [L]
+		RewriteRule ^m$ /radio/playlist.php?type=m [L]
 	
 	
  		4. Save .htaccess file on the ftp
 	
  5. Open **config.php**
- 6. Change `$urldomain` to subdomain or folder url.
- 7. Choose Language (English or French), uncomment selected language.
- 8. Change title `$titledomainname` and description `$description` of frontend page.
- 9. Save **config.php** on the ftp.
- 10. Open **playlist.php**
- 11. Add/modify playlist element after `/* --- Playlist start ---- */`.
- 12. Save **playlist.php** on the ftp.
- 12. Visit the website (ex: http://radio.domain.com or http://www.domain.com/radio)
- 14. Download the playlist, open it with VLC http://www.videolan.org/ or else.	
- 15. Or copy paste website url in VLC (Media > Open network Stream)
+ 6. Comment with // `$display = TRUE;` if you want to hide the list of each podcast and radio in html (mobile reader)
+ 7. Change `$urldomain` to subdomain or folder url.
+ 8. Choose Language (English or French), uncomment selected language.
+ 9. Change title `$titledomainname` and description `$description` of frontend page.
+ 10. Save **config.php** on the ftp.
+ 11. Open **playlist.php**
+ 12. Add/modify playlist element after `/* --- Playlist start ---- */`.
+ 13. Save **playlist.php** on the ftp.
+ 14. Visit the website (ex: http://radio.domain.com or http://www.domain.com/radio)
+ 15. Download the playlist, open it with VLC http://www.videolan.org/ or else.	
+ 16. Or copy paste website url in VLC (Media > Open network Stream)
 
 ![VLCnetwork](http://playlistrss.fluate.net/img/networkstream.png) 
 

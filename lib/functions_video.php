@@ -7,7 +7,7 @@ function playlist_youtube_user($title, $youtube_username, $items)
 	$feed_url = "http://gdata.youtube.com/feeds/base/users/".$youtube_username."/uploads?alt=rss&v=2&orderby=published";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	if (HD != "TRUE") { $hdurl = "&fmt=18"; }
 	foreach($feed->get_items(0, $items) as $item) {  	
 		$streamLink=$item->get_link(); 
@@ -33,7 +33,7 @@ function playlist_youtube_user_favorite($title, $youtube_username, $items)
 	$feed_url = "http://gdata.youtube.com/feeds/api/users/".$youtube_username."/favorites?orderby=updated";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	if (HD != "TRUE") { $hdurl = "&fmt=18"; }
 	foreach($feed->get_items(0, $items) as $item) {  
 		$streamLink=$item->get_link(); 
@@ -58,7 +58,7 @@ function playlist_youtube_normal($title, $feed_url, $items)
 	category_title($title);
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type(); 
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type(); 
 	$i = 1;
 	if (HD != "TRUE") { $hdurl = "&fmt=18"; }
 	foreach($feed->get_items(0, 20) as $item) 
@@ -81,7 +81,7 @@ function playlist_youtube_playlist($title, $youtube_playlist, $items)
 	$feed_fav_ytube = "http://gdata.youtube.com/feeds/api/playlists/".$youtube_playlist;
 	$feed = new SimplePie(); $feed->set_feed_url($feed_fav_ytube);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	$i = 1;
 	if ($hd == "HD") { $hdurl =""; } else { $hdurl = "&fmt=18"; }
 	foreach($feed->get_items(0, $items) as $item) 
@@ -110,7 +110,7 @@ function playlist_dailymotion_user($title, $daily_user, $items)
 	$feed_url = "http://www.dailymotion.com/rss/user/".$daily_user."/1"; 
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  
 		$streamLink=$item->get_link(); 
 		$date=$item->get_date('Y.m.d');  
@@ -130,7 +130,7 @@ function playlist_dailymotion_groups($title, $daily_group, $items)
 	$feed_url = "http://www.dailymotion.com/rss/group/".$daily_group."/1";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  
 		$streamLink=$item->get_link(); 
 		$date=$item->get_date('Y.m.d');  
@@ -151,7 +151,7 @@ function playlist_dailymotion_playlist($title, $daily_playlistID, $items)
 	$feed_url = "http://www.dailymotion.com/rss/playlist/".$daily_playlistID."/1";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  
 		$streamLink=$item->get_link(); 
 		$date=$item->get_date('Y.m.d');  
@@ -171,7 +171,7 @@ function playlist_dailymotion_search($title, $daily_s, $items)
 	$feed_url = "http://www.dailymotion.com/rss/playlists/relevance/search/".$daily_s."/1";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  
 		$streamLink=$item->get_link(); 
 		$date=$item->get_date('Y.m.d');  
@@ -190,7 +190,7 @@ function playlist_vimeo_user($title, $vimeo_user, $items)
 	$feed_url = "http://vimeo.com/".$vimeo_user."/videos/rss"; 
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  
 		$streamLink=$item->get_link(); 
 		$date=$item->get_date('Y.m.d');  
@@ -210,7 +210,7 @@ function playlist_vimeo_likes($title, $vimeo_user, $items)
 	$feed_url = "http://vimeo.com/".$vimeo_user."/likes/rss";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache');  $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  
 		$streamLink=$item->get_link(); 
 		$date=$item->get_date('Y.m.d');  
@@ -230,7 +230,7 @@ function playlist_vimeo_groups($title, $vimeo_groupname, $items)
 	$feed_url = "http://vimeo.com/groups/".$vimeo_groupname."/videos/rss";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache'); $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  		
 		$date=$item->get_date('Y.m.d');   
 		$itemDescription = shorten($item->get_description(),100);
@@ -251,7 +251,7 @@ function playlist_vimeo_channels($title, $vimeo_channelname, $items)
 	$feed_url = "http://vimeo.com/channels/".$vimeo_channelname."/videos/rss";
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('simplepie/cache'); $feed->init(); $feed->handle_content_type();
+	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();
 	foreach($feed->get_items(0, $items) as $item) {  		
 		$date=$item->get_date('Y.m.d');  
 		$itemDescription = shorten($item->get_description(),100);
