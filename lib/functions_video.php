@@ -4,7 +4,7 @@
 function playlist_youtube_user($title, $youtube_username, $items)
 { 	
 	category_title($title.' (youtube user)');
-	$feed_url = "http://gdata.youtube.com/feeds/base/users/".$youtube_username."/uploads?alt=rss&v=2&orderby=published";
+	$feed_url = "https://www.youtube.com/feeds/videos.xml?user=".$youtube_username;
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
 	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
@@ -30,7 +30,7 @@ function playlist_youtube_user($title, $youtube_username, $items)
 function playlist_youtube_user_favorite($title, $youtube_username, $items)
 { 	
 	category_title($title.' (youtube user)');
-	$feed_url = "http://gdata.youtube.com/feeds/api/users/".$youtube_username."/favorites?orderby=updated";
+	$feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=".$youtube_username;
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
 	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();
@@ -78,7 +78,7 @@ function playlist_youtube_normal($title, $feed_url, $items)
 function playlist_youtube_playlist($title, $youtube_playlist, $items)
 { 
 	category_title($title.' (youtube playlist)');
-	$feed_fav_ytube = "http://gdata.youtube.com/feeds/api/playlists/".$youtube_playlist;
+	$feed_fav_ytube = "https://www.youtube.com/feeds/videos.xml?playlist_id=".$youtube_playlist;
 	$feed = new SimplePie(); $feed->set_feed_url($feed_fav_ytube);
 	$feed->set_item_class(); $feed->enable_cache(true); $feed->set_cache_duration(3600);
 	$feed->set_cache_location('lib/simplepie/cache');  $feed->init(); $feed->handle_content_type();

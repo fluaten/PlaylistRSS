@@ -1,68 +1,76 @@
-<?php 
-include 'config.php';
+<?php
 
-$ua = $_SERVER["HTTP_USER_AGENT"];
-
-if(ereg('Opera', $ua
- ) || ereg('Yahoo-Blogs', $ua
- ) || ereg('VoilaBot', $ua
- ) || ereg('Maxthon', $ua
- ) || ereg('MyIE2', $ua
- ) || ereg('MSIE', $ua
- ) || ereg('Firefox', $ua
- ) || ereg('OmniWeb', $ua
- ) || ereg('Shiira', $ua
- ) || ereg('Safari', $ua
- ) || ereg('Camino', $ua
- ) || ereg('Konqueror', $ua
- ) || ereg('Lynx', $ua
- ) || ereg('HTTrack', $ua
- ) || ereg('NokiaN70', $ua
- ) || ereg('iCab', $ua
- ) || ereg('Netscape', $ua
- ) || ereg('Galeon', $ua
- ) || ereg('Epiphany', $ua
- ) || ereg('Firebird', $ua
- ) || ereg('K-Meleon', $ua
- ) || ereg('Googlebot', $ua
- ) || ereg('msnbot', $ua
- ) || ereg('Java/', $ua
- ) || ereg('Ask Jeeves/Teoma', $ua
- ) || ereg('Slurp', $ua
- ) || ereg('OmniExplorer_Bot', $ua
- ) || ereg('ia_archiver', $ua
- ) || ereg('Liferea', $ua
- ) || ereg('FeedFetcher-Google', $ua
- ) || ereg('Bloglines', $ua
- ) || ereg('FeedDemon', $ua
- ) || ereg('NetNewsWire', $ua
- ) || ereg('AppleSyndication', $ua
- ) || ereg('NewsGatorOnline', $ua
- ) || ereg('Feedreader', $ua
- ) || ereg('Thunderbird', $ua
- ) || ereg('MagpieRSS', $ua
- ) || ereg('Waggr_Fetcher', $ua
- ) || ereg('iTunes', $ua
- ) || ereg('CSE HTML Validator', $ua
- ) || ereg('Jigsaw', $ua
- ) || ereg('FeedValidator', $ua
- ) || ereg('WDG_Validator', $ua
- ) || ereg('Page Valet', $ua
- ) || ereg('NetMechanic', $ua
- ) || eregi('amaya', $ua
- ) || eregi('Incutio', $ua
- ) || eregi('SeaMonkey', $ua
- ) || eregi('AvantGo', $ua
- ) || ereg('Mozilla/', $ua
- ) || ereg('Gecko', $ua
- ) || eregi('NetPositive', $ua
- ) || ereg('curl', $ua
- ) || ereg('ELinks', $ua
- ) || ereg('AmigaVoyager', $ua
- ))
-{
-header ('location: m');	
+function getBrowser($deviceString){
+	
+	$deviceModel = strtolower($deviceString);
+		
+	if(strpos($deviceModel,'ecko')
+	  || strpos($deviceModel,'yahoo')
+	  || strpos($deviceModel,'voilaBot')
+	  || strpos($deviceModel,'maxthon')
+		  || strpos($devicemodel,'myie2')
+		  || strpos($devicemodel,'msie')
+		  || strpos($devicemodel,'firefox')
+		  || strpos($devicemodel,'omniweb')
+		  || strpos($devicemodel,'shiira')
+		  || strpos($devicemodel,'safari')
+		  || strpos($devicemodel,'camino')
+		  || strpos($devicemodel,'konqueror')
+		  || strpos($devicemodel,'lynx')
+		  || strpos($devicemodel,'httrack')
+		  || strpos($devicemodel,'nokian70')
+		  || strpos($devicemodel,'icab')
+		  || strpos($devicemodel,'netscape')
+		  || strpos($devicemodel,'galeon')
+		  || strpos($devicemodel,'epiphany')
+		  || strpos($devicemodel,'firebird')
+		  || strpos($devicemodel,'k-meleon')
+		  || strpos($devicemodel,'googlebot')
+		  || strpos($devicemodel,'msnbot')
+		  || strpos($devicemodel,'java')
+		  || strpos($devicemodel,'ask jeeves/teoma')
+		  || strpos($devicemodel,'slurp')
+		  || strpos($devicemodel,'omniexplorer_bot')
+		  || strpos($devicemodel,'ia_archiver')
+		  || strpos($devicemodel,'liferea')
+		  || strpos($devicemodel,'feedfetcher-google')
+		  || strpos($devicemodel,'bloglines')
+		  || strpos($devicemodel,'feeddemon')
+		  || strpos($devicemodel,'netnewswire')
+		  || strpos($devicemodel,'applesyndication')
+		  || strpos($devicemodel,'newsgatoronline')
+		  || strpos($devicemodel,'feedreader')
+		  || strpos($devicemodel,'thunderbird')
+		  || strpos($devicemodel,'magpierss')
+		  || strpos($devicemodel,'waggr_fetcher')
+		  || strpos($devicemodel,'itunes')
+		  || strpos($devicemodel,'cse html validator')
+		  || strpos($devicemodel,'jigsaw')
+		  || strpos($devicemodel,'feedvalidator')
+		  || strpos($devicemodel,'wdg_validator')
+		  || strpos($devicemodel,'page valet')
+		  || strpos($devicemodel,'netmechanic')
+		  || strpos($devicemodel,'amaya')
+		  || strpos($devicemodel,'incutio')
+		  || strpos($devicemodel,'seamonkey')
+		  || strpos($devicemodel,'avantgo')
+		  || strpos($devicemodel,'mozilla')
+		  || strpos($devicemodel,'ecko')
+		  || strpos($devicemodel,'netpositive')
+		  || strpos($devicemodel,'curl')
+		  || strpos($devicemodel,'elinks')
+		  || strpos($devicemodel,'amigavoyager')
+	 ){
+	echo '<meta http-equiv="refresh" content="0; url=m">';
+	header ('location: m');
+	}
+	else{
+	$urldomain = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	echo $urldomain."/vlc.m3u"; 
+	}
 }
-echo $urldomain."/vlc.m3u"; 
+// get the user agent string
+$agent	=	strtolower($_SERVER['HTTP_USER_AGENT']);
+// call the redirect function
+$deviceScreen = getBrowser($agent); 
 ?>
-

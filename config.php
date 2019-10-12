@@ -1,6 +1,6 @@
 <?php
 /*
-Playlist Rss 0.2 / 2012
+Playlist Rss 0.3 / 2012-2019
 https://github.com/fluaten
 
 Made with Simplepie for converting RSS feed.

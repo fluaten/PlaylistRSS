@@ -298,9 +298,6 @@ body#htmlrender {
 }
 		
 	
-a.radio {
-	color: #212121;
-}	
 	
 	span#url.copyvlc {
 	display: block;
@@ -316,6 +313,15 @@ span#url.copyvlc textarea#url {
 	text-align: left;
 	font: 32px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	margin-bottom: 30px;
+}
+
+div.audioplayer {
+}
+
+.audiojs {
+	margin-left: 9px;
+	margin-top: 9px;
+	margin-bottom: 9px;
 }
 	
 	

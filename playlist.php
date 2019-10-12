@@ -8,9 +8,10 @@ playlist_space();
 
 category_title('Radios');
 
-playlist_radio_stream('Jazzopolitan', 'http://listen.radionomy.com/jazzopolitan');
-playlist_radio_stream('Dublab', 'http://205.188.215.225:8008/');
-playlist_radio_stream('Laid Back Radio', 'http://streaming.radionomy.com:8000/Laid-Back-Radio');
+playlist_radio_stream('Radio nova', 'http://broadcast.infomaniak.net:80/radionova-high.mp3');
+playlist_radio_stream('Fip autour du Groove', 'http://direct.fipradio.fr/live/fip-webradio3.mp3');
+playlist_radio_stream('Deutschlandfunk', 'http://st01.dlf.de/dlf/01/128/mp3/stream.mp3');
+
 
 playlist_space();
 
@@ -18,9 +19,9 @@ category_title('Podcasts');
 
 playlist_space();
 
-playlist_podcast('Dublab', 'http://dublab.com/podcast', 15);
+playlist_podcast('DJ Nirso podcast', 'https://djnirso.podomatic.com/rss2.xmlsource', 10, 12);
 
-playlist_podcast('Place de la toile [France Culture]', 'http://radiofrance-podcast.net/podcast09/rss_10465.xml', 10);
+playlist_podcast('Une vie, une oeuvre [France Culture]', 'http://radiofrance-podcast.net/podcast09/rss_10471.xml', 10, 20);
 
 
 /* --- Playlist end ---- */

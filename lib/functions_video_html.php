@@ -7,7 +7,7 @@ $limititems = 5;
 function playlist_youtube_user($title, $youtube_username, $items)
 { 	$items = $GLOBALS['limititems'];
 
-	$feed_url = "http://gdata.youtube.com/feeds/base/users/".$youtube_username."/uploads?alt=rss&v=2&orderby=published";
+	$feed_url = "https://www.youtube.com/feeds/videos.xml?user=".$youtube_username;
 	category_title($title.' (youtube user) <span class="url">'.$youtube_username.'</span>');	echo '<ul>';
 	
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
@@ -48,7 +48,7 @@ function playlist_youtube_user($title, $youtube_username, $items)
 function playlist_youtube_user_favorite($title, $youtube_username, $items)
 { 	
 		$items = $GLOBALS['limititems'];
-	$feed_url = "http://gdata.youtube.com/feeds/api/users/".$youtube_username."/favorites?orderby=updated";
+	$feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=".$youtube_username;
 	category_title($title.' (youtube user)<span class="url">'.$youtube_username.'</span>');
 	echo '<ul>';
 	$feed = new SimplePie(); $feed->set_feed_url($feed_url);
@@ -106,7 +106,7 @@ function playlist_youtube_normal($title, $feed_url, $items)
 //Playlist playlist youtube
 function playlist_youtube_playlist($title, $youtube_playlist, $items)
 { 	$items = $GLOBALS['limititems'];
-	$feed_fav_ytube = "http://gdata.youtube.com/feeds/api/playlists/".$youtube_playlist;
+	$feed_fav_ytube = "https://www.youtube.com/feeds/videos.xml?playlist_id=".$youtube_playlist;
 	//$url_fav_ytube = "https://www.youtube.com/playlist?list=".$youtube_playlist;
 	category_title($title.' (youtube playlist) <span class="url">'.$youtube_playlist.'</span>');
 	echo '<ul>';

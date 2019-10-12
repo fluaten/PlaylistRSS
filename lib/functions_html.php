@@ -1,11 +1,14 @@
 <? 
 require 'config.php';
-require 'simplepie/simplepie_1.3.compiled.php'; 
+require 'simplepie/autoloader.php'; 
+
 include 'functions_video_html.php'; // include the functions to transform video playlist (simplepie)
 
 function header_playlist() { 
 	global $titledomainname, $description, $urldomain, $downloadtext, $copyinvlc, $urlchange;
-	if(ereg('VLC', $_SERVER["HTTP_USER_AGENT"])) { echo $urldomain."/vlc.m3u"; exit; }
+
+	
+	//if(ereg('VLC', $_SERVER["HTTP_USER_AGENT"])) { echo $urldomain."/vlc.m3u"; exit; }
 	echo '
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 		        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -14,6 +17,12 @@ function header_playlist() {
 			<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 			<title>'.$titledomainname.'</title>
 			<link rel="stylesheet" type="text/css" href="lib/css_style.css" />
+			<script src="lib/audiojs/audiojs/audio.min.js"></script>
+			<script>
+			  audiojs.events.ready(function() {
+			    var as = audiojs.createAll();
+			  });
+			</script>
 		</head>
 		<body id="htmlrender" onload=""><div class="main">
 		<a name="top"></a>
@@ -25,6 +34,9 @@ function header_playlist() {
 		<span class="domain"><h3>'.$urldomain.'</h3><h4>'.$copyinvlc.'</h4>
 		
 		';
+		
+		
+		
 		if ($urldomain == "http://radio.domain.com") {echo '<br><h4>'.$urlchange.'</h4><br>';}
 		$urlxspf = str_replace("/", "_", substr($urldomain, 7));
 		echo '</span><a class="dlink" href="'.$urldomain.'/Playlist_'.$urlxspf.'.xspf" rel="alternate" target=_blank >
@@ -52,22 +64,26 @@ function playlist_radio_stream($title, $radio_url) {
 	<ul>
         <li>
 		<a  class="radio" href="'.$radio_url.'">Radio / '.$title.'
-		<span class="time"> '.$radio_url.'</span></a>
+		</a>
 		</li>
     </ul>
 	';
 }
 
 
-function playlist_podcast($title, $podcast_url, $items)
+function playlist_podcast($title, $podcast_url, $maxitems, $reverse = FALSE)
 {
 	category_title($title.'<span class="url">'.$podcast_url.'</span>');
 	$feed = new SimplePie(); $feed->set_feed_url($podcast_url); $feed->set_item_class(); 
 	$feed->enable_cache(true); $feed->strip_htmltags(); $feed->set_cache_duration(3600);
 	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();  
+	$feeditems = $feed->get_items(0, $maxitems);
+	if ($reverse) {
+	$feeditems = array_reverse($feeditems);
+	}
 	$i = 1;
 	echo '<ul>';
-	foreach($feed->get_items(0, $GLOBALS['limititems']) as $item) 
+	foreach($feeditems as $item) 
 	{  
 		$mediaEnclosures = $item->get_enclosures(); 
 		foreach ($mediaEnclosures as $enclosure) 
@@ -94,7 +110,7 @@ function playlist_podcast($title, $podcast_url, $items)
 				<li>
 					<a class="podcast" href="'.$_link.'">'.$xtitle.' 
 						<span class="time"> '.$date.' / '.$durationminute.' / '.$title.'</span>
-					</a>
+					</a>		
 				</li>
 		    ';
 		}
@@ -106,14 +122,18 @@ function playlist_podcast($title, $podcast_url, $items)
 	playlist_space();
 }
 
-function playlist_podcast_nospace($title, $podcast_url, $items)
+function playlist_podcast_nospace($title, $podcast_url, $maxitems, $reverse = FALSE)
 {
 	$feed = new SimplePie(); $feed->set_feed_url($podcast_url); $feed->set_item_class(); 
 	$feed->enable_cache(true); $feed->strip_htmltags(); $feed->set_cache_duration(3600);
-	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();  
+	$feed->set_cache_location('lib/simplepie/cache'); $feed->init(); $feed->handle_content_type();
+	$feeditems = $feed->get_items(0, $maxitems);
+	if ($reverse) {
+	$feeditems = array_reverse($feeditems);
+	}
 	$i = 1;
 	echo '<ul>';
-	foreach($feed->get_items(0, $items) as $item) 
+	foreach($feeditems as $item) 
 	{  
 		$mediaEnclosures = $item->get_enclosures(); 
 		foreach ($mediaEnclosures as $enclosure) 

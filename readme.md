@@ -88,22 +88,6 @@ Copy paste line below in **playlist.php** and change url and title.
 
 #### Video playlist with youtube, vimeo, dailymotion (experimental)
 
-Video streaming is still experimental, and freeze sometimes, it depends on how VLC read these stream. 
-
-You need to do two modifications to VLC (latest version) :
-
-To read a youtube video in VLC, replace the content of youtube.lua with :
-<http://git.videolan.org/?p=vlc.git;a=blob_plain;f=share/lua/playlist/youtube.lua>
-
-To read a vimeo video in VLC, replace the content of vimeo.lua with :
-<http://git.videolan.org/?p=vlc.git;a=blob_plain;f=share/lua/playlist/vimeo.lua>
-
-		Modify lua script here :
-		Windows : C:/Program Files/VideoLAN/VLC/lua/playlist/
-		Mac : /Applications/VLC.app/Contents/MacOS/share/lua/playlist/
-		Linux : /usr/lib/vlc/lua/playlist
-
-
 #####Youtube
 
 `playlist_youtube_user('Title', 'user ID', 20);`
@@ -162,29 +146,3 @@ To read a vimeo video in VLC, replace the content of vimeo.lua with :
 ### Simplified BSD License
 
    https://en.wikipedia.org/wiki/BSD_licenses
-	
-	Copyright 2012 Nicolas Boillot. All rights reserved.
-
-    Redistribution and use in source and binary forms, with or without modification, are
-    permitted provided that the following conditions are met:
-
-       1. Redistributions of source code must retain the above copyright notice, this list of
-          conditions and the following disclaimer.
-
-       2. Redistributions in binary form must reproduce the above copyright notice, this list
-          of conditions and the following disclaimer in the documentation and/or other materials
-          provided with the distribution.
-
-    THIS SOFTWARE IS PROVIDED BY NICOLAS BOILLOT ''AS IS'' AND ANY EXPRESS OR IMPLIED
-    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-    FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Maurice Svay OR
-    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
-    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-    ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-    The views and conclusions contained in the software and documentation are those of the
-    authors and should not be interpreted as representing official policies, either expressed
-    or implied, of Nicolas Boillot.
